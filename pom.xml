@@ -21,6 +21,8 @@
         <scala.long.version>2.10.4</scala.long.version>
         <scala.short.version>2.10</scala.short.version>
         <scalatest.version>2.1.6</scalatest.version>
+        <mavenVersion>3.3.3</mavenVersion>
+        <javaVersion>1.8</javaVersion>
     </properties>
     <modules>
         <module>event-api</module>
@@ -178,6 +180,29 @@
                     <serverId>atk</serverId>
                     <nexusUrl>https://maven.trustedanalytics.org</nexusUrl>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>${mavenVersion}</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>${javaVersion}</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -5,9 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.trustedanalytics.atk</groupId>
     <artifactId>event-parent</artifactId>
-    <version>0.4.2</version>
+
 
     <packaging>pom</packaging>
+
     <name>event-parent</name>
 
     <description>
@@ -24,6 +25,32 @@
         <mavenVersion>3.3.3</mavenVersion>
         <javaVersion>1.8</javaVersion>
     </properties>
+    
+    <profiles>
+        <profile>
+            <id>version-build</id>
+            <activation>
+                <property>
+                    <name>env.BUILD_NUMBER</name>
+                </property>
+            </activation>
+            <properties>
+                <version>0.4.2-${env.BUILD_NUMBER}</version>
+            </properties>
+        </profile>
+        <profile>
+            <id>version-local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <version>0.4.2</version>
+            </properties>
+        </profile>
+    </profiles>
+
+    <version>${version}</version>
+
     <modules>
         <module>event-api</module>
         <module>event</module>

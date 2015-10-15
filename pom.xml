@@ -34,6 +34,12 @@
         <module>event</module>
     </modules>
 
+    <scm>
+        <connection>scm:git:git@github.com:trustedanalytics/atk-event.git</connection>
+        <url>scm:git:git@github.com:trustedanalytics/atk-event.git</url>
+        <developerConnection>scm:git:git@github.com:trustedanalytics/atk-event.git</developerConnection>
+    </scm>
+
     <distributionManagement>
         <repository>
             <id>atk</id>

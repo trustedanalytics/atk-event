@@ -39,15 +39,20 @@
         <url>scm:git:git@github.com:trustedanalytics/atk-event.git</url>
         <developerConnection>scm:git:git@github.com:trustedanalytics/atk-event.git</developerConnection>
     </scm>
-
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
     <distributionManagement>
         <repository>
-            <id>atk</id>
-            <url>https://maven.trustedanalytics.org/content/repositories/releases</url>
+            <id>tap</id>
+            <url>https://tap.jfrog.io/tap/public</url>
         </repository>
         <snapshotRepository>
-            <id>atk-snapshots</id>
-            <url>https://maven.trustedanalytics.org/content/repositories/snapshots</url>
+            <id>tap-snapshots</id>
+            <url>https://tap.jfrog.io/tap/public-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -195,7 +200,7 @@
             <dependency>
                 <groupId>org.trustedanalytics.atk</groupId>
                 <artifactId>event-api</artifactId>
-                <version>0.4.1</version>
+                <version>master-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.scalatest</groupId>
